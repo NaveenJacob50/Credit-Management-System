@@ -13,13 +13,13 @@ public class PhoneLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_login);
-        Button btn1=(Button) findViewById(R.id.loginBtn);
+        Button btn1=(Button) findViewById(R.id.otpBtn);
         Button btn2=(Button) findViewById(R.id.createBtn);
         Button btn3=(Button)findViewById(R.id.emailBtn);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(PhoneLogin.this,HomePage.class);
+                Intent i=new Intent(PhoneLogin.this,otp.class);
                 startActivity(i);
             }
         });

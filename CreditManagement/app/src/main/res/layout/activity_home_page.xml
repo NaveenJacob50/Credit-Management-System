@@ -83,7 +83,7 @@
                 android:textSize="32sp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/phoneno_txt"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"

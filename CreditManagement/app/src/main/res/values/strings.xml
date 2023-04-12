@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Credit Management</string>
     <string name="Rs">\u20B9</string>
+    
+    <string-array name="spinnerlist">
+        <item></item>
+        <item>Add Customer</item>
+        <item>Logout</item>
+    </string-array>
 </resources>

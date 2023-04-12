@@ -17,8 +17,8 @@ public class RegisterPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_page);
 
-        EditText name_txt=(EditText)findViewById(R.id.phoneno_txt);
-        EditText company_txt=(EditText)findViewById(R.id.company_txt);
+        EditText name_txt=(EditText)findViewById(R.id.name_txt);
+        EditText company_txt=(EditText)findViewById(R.id.cphone_txt);
         EditText phone_txt=(EditText)findViewById(R.id.phone_txt);
         EditText email_txt=(EditText)findViewById(R.id.email_txt);
         EditText password_txt=(EditText)findViewById(R.id.password_txt2);

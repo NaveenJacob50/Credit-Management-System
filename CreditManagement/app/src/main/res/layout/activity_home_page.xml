@@ -29,14 +29,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/addCustomerBtn"
+            android:id="@+id/hiBtn"
             android:layout_width="170dp"
-            android:layout_height="74dp"
-            android:layout_marginTop="16dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="18dp"
             android:layout_marginEnd="16dp"
             android:backgroundTint="#4AC8C8"
-            android:drawableLeft="@drawable/baseline_person_add_24"
-            android:text="Add Customer"
+            android:text="Hi User1"
+            android:onClick="showPopup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,7 +49,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.492"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addCustomerBtn">
+            app:layout_constraintTop_toBottomOf="@+id/textView10">
 
             <TextView
                 android:id="@+id/textView11"
@@ -83,7 +83,7 @@
                 android:textSize="32sp" />
 
             <EditText
-                android:id="@+id/phoneno_txt"
+                android:id="@+id/name_txt"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
@@ -138,20 +138,16 @@
 
         </FrameLayout>
 
-        <EditText
-            android:id="@+id/editTextTextPersonName7"
-            android:layout_width="350dp"
-            android:layout_height="48dp"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:background="@drawable/search_border"
-            android:drawableStart="@drawable/baseline_search"
-            android:ems="10"
-            android:hint=" Search"
-            android:inputType="textPersonName"
-            android:paddingLeft="25dp"
+            app:queryHint="Search Here ..."
             android:textColor="#4AC8C8"
-            android:textColorHint="#4AC8C8"
             android:textSize="18dp"
+            app:iconifiedByDefault="false"
+            android:background="@drawable/search_border"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
@@ -162,94 +158,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName7">
+            app:layout_constraintTop_toBottomOf="@+id/searchView">
 
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-                <Button
-                    android:id="@+id/viewReportBtn2"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="2dp"
-                    android:paddingTop="10dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    android:backgroundTint="#4AC8C8"
-                    android:drawableLeft="@drawable/usericon_bg"
-                    android:textAllCaps="false"
-                    android:text="Yash"
-                    android:gravity="left"
-                    android:textSize="18dp" />
-
-                <Button
-                    android:id="@+id/viewReportBtn3"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="2dp"
-                    android:paddingTop="10dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    android:backgroundTint="#4AC8C8"
-                    android:drawableLeft="@drawable/usericon_bg"
-                    android:textAllCaps="false"
-                    android:text="Marcus"
-                    android:gravity="left"
-                    android:textSize="18dp" />
-                <Button
-                    android:id="@+id/viewReportBtn4"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="2dp"
-                    android:paddingTop="10dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    android:backgroundTint="#4AC8C8"
-                    android:drawableLeft="@drawable/usericon_bg"
-                    android:textAllCaps="false"
-                    android:text="Dhanush"
-                    android:gravity="left"
-                    android:textSize="18dp" />
-                <Button
-                    android:id="@+id/viewReportBtn5"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="2dp"
-                    android:paddingTop="10dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    android:backgroundTint="#4AC8C8"
-                    android:drawableLeft="@drawable/usericon_bg"
-                    android:textAllCaps="false"
-                    android:text="Ganesh"
-                    android:gravity="left"
-                    android:textSize="18dp" />
-                <Button
-                    android:id="@+id/viewReportBtn6"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="2dp"
-                    android:paddingTop="10dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    android:backgroundTint="#4AC8C8"
-                    android:drawableLeft="@drawable/usericon_bg"
-                    android:textAllCaps="false"
-                    android:text="Naveen"
-                    android:gravity="left"
-                    android:textSize="18dp" />
-                <Button
-                    android:id="@+id/viewReportBtn7"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="2dp"
-                    android:paddingTop="10dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="bottom"
-                    android:backgroundTint="#4AC8C8"
-                    android:drawableLeft="@drawable/usericon_bg"
-                    android:textAllCaps="false"
-                    android:text="Marvin"
-                    android:gravity="left"
-                    android:textSize="18dp" />
-            </LinearLayout>
+                android:paddingTop="?attr/actionBarSize"
+                android:layout_height="match_parent" />
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

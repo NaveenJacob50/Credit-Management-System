@@ -16,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText name_txt=(EditText)findViewById(R.id.phoneno_txt);
+        EditText name_txt=(EditText)findViewById(R.id.name_txt);
         EditText pass_txt=(EditText)findViewById(R.id.pass_txt);
 
-        Button btn1=(Button) findViewById(R.id.loginBtn);
+        Button btn1=(Button) findViewById(R.id.save_btn);
         Button btn2=(Button) findViewById(R.id.createBtn);
         Button btn3=(Button)findViewById(R.id.phoneBtn);
         DB=new DBHelper(this);

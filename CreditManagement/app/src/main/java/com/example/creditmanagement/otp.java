@@ -47,7 +47,7 @@ public class otp extends AppCompatActivity {
         getotpbackend=getIntent().getStringExtra("backendotp");
         final ProgressBar progressBarverifyotp=findViewById(R.id.progressbar_verify_otp);
 
-        final Button btn1=(Button)findViewById(R.id.loginBtn);
+        final Button btn1=(Button)findViewById(R.id.save_btn);
         Button btn2=(Button)findViewById(R.id.resendBtn);
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +132,7 @@ public class otp extends AppCompatActivity {
                             @Override
                             public void onCodeSent(@NonNull String newbackendotp, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 getotpbackend=newbackendotp;
+
                                 Toast.makeText(otp.this,"Otp sended Successfully",Toast.LENGTH_SHORT).show();
                             }
                         }

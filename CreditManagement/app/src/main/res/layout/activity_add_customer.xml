@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/phoneno_txt"
+        android:id="@+id/name_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -70,14 +70,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/company_txt"
+        android:id="@+id/cphone_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:backgroundTint="#4AC8C8"
         android:ems="10"
         android:hint="Phone Number"
-        android:inputType="textPersonName"
+        android:inputType="phone"
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:textColor="#309797"
@@ -86,10 +86,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/phoneno_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/name_txt" />
 
     <Button
-        android:id="@+id/loginBtn"
+        android:id="@+id/save_btn"
         android:layout_width="130dp"
         android:layout_height="55dp"
         android:layout_marginTop="24dp"
@@ -98,6 +98,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/company_txt" />
+        app:layout_constraintTop_toBottomOf="@+id/cphone_txt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

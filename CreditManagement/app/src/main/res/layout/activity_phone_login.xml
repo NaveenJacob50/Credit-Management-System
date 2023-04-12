@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
-        android:id="@+id/phoneno_txt"
+        android:id="@+id/name_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="65dp"
@@ -80,10 +80,10 @@
         android:layout_marginTop="10dp"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneno_txt">
+        app:layout_constraintTop_toBottomOf="@+id/name_txt">
 
         <Button
-            android:id="@+id/loginBtn"
+            android:id="@+id/save_btn"
             android:layout_width="130dp"
             android:layout_height="55dp"
             android:layout_marginTop="10dp"
@@ -93,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/phoneno_txt" />
+            app:layout_constraintTop_toBottomOf="@+id/name_txt" />
 
         <ProgressBar
             android:id="@+id/progressbar_sending_otp"

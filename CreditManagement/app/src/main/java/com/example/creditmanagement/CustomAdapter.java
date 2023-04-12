@@ -1,5 +1,8 @@
 package com.example.creditmanagement;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -24,8 +28,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     private Context context;
     //private Activity activity;
     private ArrayList c_id, c_name,c_phone;
-    CustomAdapter(Context context, ArrayList c_id, ArrayList c_name,ArrayList c_phone){
-       // this.activity=activity;
+    private Activity activity;
+
+    CustomAdapter(Activity activity,Context context, ArrayList c_id, ArrayList c_name,ArrayList c_phone){
+        this.activity=activity;
         this.context = context;
         this.c_id = c_id;
         this.c_name = c_name;
@@ -42,10 +48,23 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         holder.customer_id_txt.setText(String.valueOf(c_id.get(position)));
         holder.customer_name_txt.setText(String.valueOf(c_name.get(position)));
         holder.customer_mobile_txt.setText(String.valueOf(c_phone.get(position)));
+
+        //Recyclerview onClickListener
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, Report.class);
+                intent.putExtra("id", String.valueOf(c_id.get(position)));
+                intent.putExtra("name", String.valueOf(c_name.get(position)));
+                intent.putExtra("phone", String.valueOf(c_phone.get(position)));;
+                activity.startActivityForResult(intent, 1);
+
+            }
+        });
     }
 
     @Override
@@ -53,16 +72,18 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return c_id.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView customer_id_txt,  customer_name_txt,customer_mobile_txt;
-
+        LinearLayout mainLayout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             customer_id_txt = itemView.findViewById(R.id.customer_id_txt);
             customer_name_txt = itemView.findViewById(R.id.customer_name_txt);
             customer_mobile_txt=itemView.findViewById(R.id.customer_phone_txt);
+            mainLayout = itemView.findViewById(R.id.mainLayout);
         }
+
 
     }
 

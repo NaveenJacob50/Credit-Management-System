@@ -17,6 +17,7 @@ public class DBHelper2 extends SQLiteOpenHelper {
     private static final String CUSTOMER_COL1="user_name";
     private static final String CUSTOMER_COL2="user_phone";
 
+
     public DBHelper2(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
         this.context=context;
@@ -31,6 +32,7 @@ public class DBHelper2 extends SQLiteOpenHelper {
                 CUSTOMER_COL2 + " INTEGER);";
 
         db.execSQL(query1);
+
     }
 
     @Override

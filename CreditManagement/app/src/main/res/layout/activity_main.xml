@@ -21,10 +21,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTitle_txt" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/nameTitle_txt"
         android:layout_width="379dp"
         android:layout_height="82dp"
         android:layout_marginTop="52dp"

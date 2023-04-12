@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.example.creditmanagement.MyAdapter.Adapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +41,7 @@ public class HomePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
         c_id=new ArrayList<>();
         c_name=new ArrayList<>();
         c_phone=new ArrayList<>();
-        customAdapter=new CustomAdapter(HomePage.this,c_id,c_name,c_phone);
+        customAdapter=new CustomAdapter(HomePage.this,this,c_id,c_name,c_phone);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(HomePage.this));
 
@@ -97,3 +99,4 @@ public class HomePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
 
 
 }
+

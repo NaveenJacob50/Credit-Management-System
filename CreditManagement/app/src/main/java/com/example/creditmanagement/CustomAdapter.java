@@ -1,7 +1,5 @@
 package com.example.creditmanagement;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -10,15 +8,11 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -78,9 +72,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         LinearLayout mainLayout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            customer_id_txt = itemView.findViewById(R.id.customer_id_txt);
-            customer_name_txt = itemView.findViewById(R.id.customer_name_txt);
-            customer_mobile_txt=itemView.findViewById(R.id.customer_phone_txt);
+            customer_id_txt = itemView.findViewById(R.id.transaction_date_txt);
+            customer_name_txt = itemView.findViewById(R.id.transaction_gave_txt);
+            customer_mobile_txt=itemView.findViewById(R.id.transaction_got_txt);
             mainLayout = itemView.findViewById(R.id.mainLayout);
         }
 

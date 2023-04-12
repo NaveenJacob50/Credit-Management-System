@@ -2,6 +2,7 @@ package com.example.creditmanagement;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
@@ -54,5 +55,14 @@ public class DBHelper3 extends SQLiteOpenHelper {
             Toast.makeText(context,"Failed",Toast.LENGTH_SHORT).show();
         else
             Toast.makeText(context,"Transaction Added",Toast.LENGTH_SHORT).show();
+    }
+
+    Cursor readTransactions(String t_id){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor=null;
+        if(db!=null){
+            cursor=db.rawQuery("Select * from "+ TABLE_NAME3 + " where tr_id=? ", new String[] {t_id},null);
+        }
+        return cursor;
     }
 }

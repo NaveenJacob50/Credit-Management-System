@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.creditmanagement.CustomAdapter;
 import com.example.creditmanagement.Model.RowModel;
 import com.example.creditmanagement.R;
 
@@ -53,9 +52,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyHolder> {
         public MyHolder(@NonNull View itemView) {
             super(itemView);
 
-            customer_id_txt = itemView.findViewById(R.id.customer_id_txt);
-            customer_name_txt = itemView.findViewById(R.id.customer_name_txt);
-            customer_mobile_txt=itemView.findViewById(R.id.customer_phone_txt);
+            customer_id_txt = itemView.findViewById(R.id.transaction_date_txt);
+            customer_name_txt = itemView.findViewById(R.id.transaction_gave_txt);
+            customer_mobile_txt=itemView.findViewById(R.id.transaction_got_txt);
         }
     }
 }

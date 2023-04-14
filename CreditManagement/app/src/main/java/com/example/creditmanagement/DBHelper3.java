@@ -65,4 +65,68 @@ public class DBHelper3 extends SQLiteOpenHelper {
         }
         return cursor;
     }
+
+    public String gaveSum(String t_id) {
+        SQLiteDatabase db = getReadableDatabase();
+        String sumGave;
+        Cursor cursor = null;
+        cursor = db.rawQuery("SELECT SUM(" + TRANSACTION_COL2 + ") FROM " + TABLE_NAME3 + " where tr_id=? ", new String[]{t_id}, null);
+        if (cursor.moveToFirst()) {
+            sumGave = String.valueOf(cursor.getInt(0));
+        }
+        else{
+            sumGave="0";
+        }
+        cursor.close();
+        db.close();
+        return sumGave;
+    }
+
+    public String gotSum(String t_id) {
+        SQLiteDatabase db = getReadableDatabase();
+        String sumGot;
+        Cursor cursor = null;
+        cursor = db.rawQuery("SELECT SUM(" + TRANSACTION_COL3 + ") FROM " + TABLE_NAME3 + " where tr_id=? ", new String[]{t_id}, null);
+        if (cursor.moveToFirst()) {
+            sumGot = String.valueOf(cursor.getInt(0));
+        }
+        else{
+            sumGot="0";
+        }
+        cursor.close();
+        db.close();
+        return sumGot;
+    }
+
+    public String TotalgaveSum() {
+        SQLiteDatabase db = getReadableDatabase();
+        String TotalsumGave;
+        Cursor cursor = null;
+        cursor = db.rawQuery("SELECT SUM(" + TRANSACTION_COL2 + ") FROM " + TABLE_NAME3 , null);
+        if (cursor.moveToFirst()) {
+            TotalsumGave = String.valueOf(cursor.getInt(0));
+        }
+        else{
+            TotalsumGave="0";
+        }
+        cursor.close();
+        db.close();
+        return TotalsumGave;
+    }
+
+    public String TotalgotSum() {
+        SQLiteDatabase db = getReadableDatabase();
+        String TotalsumGot;
+        Cursor cursor = null;
+        cursor = db.rawQuery("SELECT SUM(" + TRANSACTION_COL3 + ") FROM " + TABLE_NAME3 , null);
+        if (cursor.moveToFirst()) {
+            TotalsumGot = String.valueOf(cursor.getInt(0));
+        }
+        else{
+            TotalsumGot="0";
+        }
+        cursor.close();
+        db.close();
+        return TotalsumGot;
+    }
 }

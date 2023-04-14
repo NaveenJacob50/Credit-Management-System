@@ -92,27 +92,13 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    void addUser(String cname, String phoneno){
-        SQLiteDatabase db=this.getWritableDatabase();
-        ContentValues cv=new ContentValues();
-
-        cv.put(CUSTOMER_COL1,cname);
-        cv.put(CUSTOMER_COL2,phoneno);
-        long cresult=db.insert(TABLE_NAME2,null,cv);
-        if(cresult==-1)
-            Toast.makeText(context,"Failed",Toast.LENGTH_SHORT).show();
-        else
-            Toast.makeText(context,"Added Successfully",Toast.LENGTH_SHORT).show();
-    }
-
-    public boolean checknamephone(String cname , String cphone){
-        SQLiteDatabase db=this.getWritableDatabase();
-        Cursor cursor=db.rawQuery("Select * from customer_tbl where user_name=? and user_phone=?", new String[] {cname,cphone});
-        if(cursor.getCount()>0)
-            return true;
-        else
-            return false;
-
+    Cursor getPhonenumber(String email){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor=null;
+        if(db!=null){
+            cursor=db.rawQuery("Select * from "+ TABLE_NAME1 + " where tr_id=? ", new String[] {email},null);
+        }
+        return cursor;
     }
 
 

@@ -16,8 +16,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        EditText name_txt=(EditText)findViewById(R.id.name_txt);
+        EditText name_txt=(EditText)findViewById(R.id.total_got_txt);
         EditText pass_txt=(EditText)findViewById(R.id.pass_txt);
+        //Toast.makeText(MainActivity.this,"Phone :"+phoneno,Toast.LENGTH_SHORT).show();
 
         Button btn1=(Button) findViewById(R.id.save_btn);
         Button btn2=(Button) findViewById(R.id.createBtn);
@@ -61,4 +62,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }

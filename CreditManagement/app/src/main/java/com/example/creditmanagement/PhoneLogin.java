@@ -24,7 +24,7 @@ public class PhoneLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_login);
 
-        EditText phone=(EditText)findViewById(R.id.name_txt);
+        EditText phone=(EditText)findViewById(R.id.total_got_txt);
         final ProgressBar progressBar=(ProgressBar)findViewById(R.id.progressbar_sending_otp);
 
         final Button btn1=(Button) findViewById(R.id.save_btn);

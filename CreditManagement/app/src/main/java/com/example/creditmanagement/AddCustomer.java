@@ -18,7 +18,7 @@ public class AddCustomer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_customer);
-        name=(EditText) findViewById(R.id.name_txt);
+        name=(EditText) findViewById(R.id.total_got_txt);
         phone=(EditText) findViewById(R.id.cphone_txt);
         saveBtn=(Button) findViewById(R.id.save_btn);
         saveBtn.setOnClickListener(new View.OnClickListener() {

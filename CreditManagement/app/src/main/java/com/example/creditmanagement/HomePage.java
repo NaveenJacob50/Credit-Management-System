@@ -39,8 +39,6 @@ public class HomePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
         total_gave_txt=(EditText)findViewById(R.id.total_gave_txt);
         total_get_txt=(EditText)findViewById(R.id.total_got_txt);
 
-        searchView=findViewById(R.id.searchView);
-        searchView.clearFocus();
 
         recyclerView=findViewById(R.id.recyclerView);
         DB=new DBHelper2(HomePage.this);
@@ -63,7 +61,7 @@ public class HomePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
             }
         });
         storeDataInArrays();
-        //FindTotal();
+        //Finding Total
         String v1=String.format(DB3.TotalgaveSum());
         String v2=String.valueOf(DB3.TotalgotSum());
         double dv1=Double.valueOf(v1);
@@ -97,23 +95,6 @@ public class HomePage extends AppCompatActivity implements PopupMenu.OnMenuItemC
         }
     }
 
-    void FindTotal(){
-        String v1=String.format(DB3.TotalgaveSum());
-        String v2=String.valueOf(DB3.TotalgotSum());
-        double dv1=Double.valueOf(v1);
-        double dv2=Double.valueOf(v2);
-        double res;
-        if(dv1>dv2){
-            res=dv1-dv2;
-            total_gave_txt.setText(String.valueOf(res));
-            total_get_txt.setText("0");
-        }
-        else{
-            res=dv2-dv1;
-            total_gave_txt.setText("0");
-            total_get_txt.setText(String.valueOf(res));
-        }
-    }
 
     public void showPopup(View v){
         PopupMenu popup=new PopupMenu(this,v);

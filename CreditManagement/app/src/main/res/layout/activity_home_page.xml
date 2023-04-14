@@ -138,34 +138,21 @@
 
         </FrameLayout>
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            app:queryHint="Search Here ..."
-            android:textColor="#4AC8C8"
-            android:textSize="18dp"
-            app:iconifiedByDefault="false"
-            android:background="@drawable/search_border"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
-
         <ScrollView
             android:layout_width="374dp"
             android:layout_height="332dp"
+            android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/searchView">
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:paddingTop="?attr/actionBarSize"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:paddingTop="?attr/actionBarSize" />
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

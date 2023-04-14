@@ -129,4 +129,13 @@ public class DBHelper3 extends SQLiteOpenHelper {
         db.close();
         return TotalsumGot;
     }
+
+    Cursor readReport(){
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor=null;
+        if(db!=null){
+            cursor=db.rawQuery("Select * from "+ TABLE_NAME3 ,null);
+        }
+        return cursor;
+    }
 }

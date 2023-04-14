@@ -37,7 +37,6 @@ public class Report extends AppCompatActivity {
     EditText amt_txt;
     TransactionAdapter transactionAdapter;
     String msg;
-    double balance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

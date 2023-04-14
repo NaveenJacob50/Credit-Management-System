@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,25 +43,50 @@ public class RegisterPage extends AppCompatActivity {
                     Toast.makeText(RegisterPage.this,"All fields required",Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    if(password.equals(cpassword)){
-                        Boolean checkuser=DB.checkusername(email);
-                        if(checkuser==false){
-                            Boolean insert=DB.createUser(name,company,phone,email,password,cpassword);
-                            if(insert==true){
-                                Toast.makeText(RegisterPage.this,"Registration Successfully",Toast.LENGTH_SHORT).show();
-                                Intent i=new Intent(getApplicationContext(),HomePage.class);
-                                startActivity(i);
+                    if(name.length()>=5){
+                        if(company.length()>=5){
+                            if(phone.length()==10){
+                                if(Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                                    if(password.length()>8){
+                                        if(password.equals(cpassword)){
+                                            Boolean checkuser=DB.checkusername(email);
+                                            if(checkuser==false){
+                                                Boolean insert=DB.createUser(name,company,phone,email,password,cpassword);
+                                                if(insert==true){
+                                                    Toast.makeText(RegisterPage.this,"Registration Successfully",Toast.LENGTH_SHORT).show();
+                                                    Intent i=new Intent(getApplicationContext(),HomePage.class);
+                                                    startActivity(i);
+                                                }
+                                                else{
+                                                    Toast.makeText(RegisterPage.this,"Registration Failed",Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                            else{
+                                                Toast.makeText(RegisterPage.this,"User already Exists",Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                        else{
+                                            Toast.makeText(RegisterPage.this,"Passwords are not matching",Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                    else{
+                                        Toast.makeText(RegisterPage.this,"Password length should be greater than 8",Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                                else{
+                                    Toast.makeText(RegisterPage.this,"Invalid email address",Toast.LENGTH_SHORT).show();
+                                }
                             }
                             else{
-                                Toast.makeText(RegisterPage.this,"Registration Failed",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterPage.this,"Invalid phone number",Toast.LENGTH_SHORT).show();
                             }
                         }
                         else{
-                            Toast.makeText(RegisterPage.this,"User already Exists",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterPage.this,"Company Name should be greater than 5 characters",Toast.LENGTH_SHORT).show();
                         }
                     }
                     else{
-                        Toast.makeText(RegisterPage.this,"Passwords are not matching",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterPage.this,"Name should be greater than 5 characters",Toast.LENGTH_SHORT).show();
                     }
                 }
 

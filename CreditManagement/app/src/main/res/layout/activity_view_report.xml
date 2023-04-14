@@ -1,9 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewReport">
+    android:background="#E1FCDF"
+    tools:context=".Report">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#E1FCDF"
+        tools:context=".Report">
+
+
+        <TextView
+            android:id="@+id/nameTitle_txt"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/acme"
+            android:text="View Report"
+            android:gravity="center"
+            android:textColor="#4AC8C8"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.146"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:columnCount="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameTitle_txt"
+            app:rowCount="3"
+            app:useDefaultMargins="true">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="116dp"
+                android:layout_height="wrap_content"
+                android:background="#C1E6E6"
+                android:gravity="center"
+                android:text="Entries"
+                android:textColor="#4AC8C8"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_gravity="left" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:background="#C1E6E6"
+                android:gravity="center"
+                android:text="You Gave"
+                android:textColor="#4AC8C8"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:background="#C1E6E6"
+                android:gravity="center"
+                android:text="You Got"
+                android:textColor="#4AC8C8"
+                android:textSize="26dp"
+                android:textStyle="bold"
+                app:layout_gravity="right" />
+
+
+        </androidx.gridlayout.widget.GridLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="408dp"
+            android:layout_height="528dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+            tools:ignore="NestedScrolling">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:paddingTop="5dp" />
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
